@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rooms Chat</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="menu">
+
+        <input id="username" placeholder="Username">
+        <button type="button" onclick="createRoom(event)">Create</button>
+
+        <br><br>
+
+        <input id="roomId" placeholder="Room ID">
+
+        <button onclick="joinRoom()">
+            Join Room
+        </button>
+
+    </div>
+
+    <div id="chat" style="display:none;">
+
+        <h2>
+            Room:
+            <span id="roomText"></span>
+        </h2>
+
+        <div id="messages"></div>
+
+        <input id="messageInput" placeholder="Type message">
+
+        <button onclick="sendMessage()">
+            Send
+        </button>
+
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>

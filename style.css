@@ -1,0 +1,32 @@
+body {
+    font-family: Arial;
+    background: #ece5dd;
+    margin: 0;
+    padding: 20px;
+}
+
+#messages {
+    height: 400px;
+    overflow-y: auto;
+    background: white;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.message {
+    background: #dcf8c6;
+    padding: 8px;
+    margin: 5px;
+    border-radius: 10px;
+    width: fit-content;
+}
+
+input {
+    padding: 10px;
+    margin: 5px;
+}
+
+button {
+    padding: 10px;
+    cursor: pointer;
+}
