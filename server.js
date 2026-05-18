@@ -1,4 +1,3 @@
-console.log("SERVER STARTED");
 const express = require("express");
 const http = require("http");
 const { Server } = require("socket.io");
@@ -41,7 +40,7 @@ io.on("connection", (socket) => {
 
         socket.roomId = roomId;
         socket.username = username;
-
+        saveRooms(rooms);
         socket.emit("roomCreated", {
             roomId,
             messages: rooms[roomId].messages
@@ -65,7 +64,7 @@ io.on("connection", (socket) => {
         socket.username = username;
 
         rooms[roomId].users.push(username);
-
+        saveRooms(rooms);
         socket.emit("oldMessages", rooms[roomId].messages);
 
         io.to(roomId).emit("message", {
@@ -89,7 +88,7 @@ io.on("connection", (socket) => {
         };
 
         rooms[roomId].messages.push(data);
-
+       saveRooms(rooms);
         io.to(roomId).emit("message", data);
     });
     socket.on("disconnect", () => {
